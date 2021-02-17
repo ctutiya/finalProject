@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import 'reset';
+@import 'variables';
+@import 'navbar';
+
+/* Typograph */
+
+body {
+    font-family: $primary-font;
+    color: $text-color;
+}
+
+h2 {
+    line-height: 43px;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 30px;
+    line-height: 44px;
+    font-size: 34px;
+    font-weight: 600;
+    text-align: center;
+    color: $primary-color;
+}
+
+h4 {
+    line-height: 28px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+p {
+    line-height: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Colors */
+
+.primary-color {
+    color: $primary-color;
+}
+
+.secondary-color {
+    color: $secondary-color;
+}
+
+.primary-bg-color {
+    background-color: $primary-color;
+}
+
+.secondary-bg-color {
+    background-color: $secondary-color;
+}
+
+.terciary-bg-color {
+    background-color: $terciary-color;
+}
+
+/* Forms */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $form-text-color;
+    opacity: .7; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $form-text-color;
+    opacity: .7;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $form-text-color;
+    opacity: .7;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    line-height: 34px;
+    padding: 3px;
+    font-size: 18px;
+    color: $form-text-color;
+    background-color: transparent;
+    border: 1px solid $form-border-color;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    line-height: 34px;
+    padding: 3px;
+}
+
+.btn-submit {
+    height: 40px;
+    font-weight: 700;
+    color: $form-text-white-color;
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+/* Buttons */
+
+/* Header */
+
+header {
+    .header-top {
+        padding: 6px 15px;
+        background-color: $primary-color;
+
+        a, li {
+            color: $header-top-link-color;
+        }
+        
+        .links {
+            font-size: 0;
+    
+            li {
+                line-height: 18px;
+                margin-left: 10px;
+                font-size: 15px;
+                display: inline-block;
+    
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    
+        .social-links {
+            @extend .links;
+    
+            text-align: right;
+    
+            li {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .navbar-buttons-container {
+        .lnk-search {
+            cursor: pointer;
+        }
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
+    }
+
+    .form-search-container {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 0px 5px 5px #00000029;
+        transition: 0.5s;
+        z-index: -1;
+
+        input {
+            height: 26px;
+            border-radius: 0;
+        }
+
+        button {
+            color: $primary-color;
+            border-color: $primary-color;
+            border-radius: 0;
+
+            &:hover {
+                color: #fff;
+                background-color: $primary-color;
+            }
+        }
+
+        &.show {
+            bottom: -70px;
+        }
+    }
+}
+
+/* Main */
+
+section {
+    padding: 80px 0;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.sec-hero {
+    position: relative;
+    padding: 103px 0;
+    text-align: center;
+    background-image: url(https://www.spkaa.com/wp-content/uploads/2017/06/home-option1.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    h1 {
+        /* line-height: 80px; */
+        line-height: 1.43;
+        margin-bottom: 15px;
+        font-size: 56px;
+        font-weight: 400;
+        color: $hero-text-color;
+    }
+
+    p {
+        line-height: 35px;
+        margin-bottom: 33px;
+        font-size: 20px;
+        font-weight: 400;
+        color: $hero-text-color;
+    }
+
+    a {
+        line-height: 21px;
+        padding: 15px 30px;
+        font-size: 17px;
+        font-weight: 500;
+        color: $hero-text-color;
+        background-color: $secondary-color;
+        display: inline-block;
+    }
+}
+
+.sec-how-help {
+    div[class*="col-"] {
+        position: relative;
+        padding-bottom: 54px;
+
+        .btn-more {
+            position: absolute;
+            width: calc(100% - 24px);
+            bottom: 0;
+
+            .lnk-more {
+                padding: 11px 20px;
+                font-weight: 700;
+                color: $text-color;
+                border: 1px solid $text-color;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.sec-clients {
+    div[class*="col-"] {
+        img {
+            /* max-width: 250px; */
+            max-height: 120px;
+        }
+    }
+}
+
+.sec-services {
+    div[class*="col-"] {
+        .services-container {
+            position: relative;
+            height: 100%;
+            padding: 15px;
+            background-color: #fff;
+            transition: 0.5s;
+
+            .services-image {
+                margin-bottom: 15px;
+
+                img {
+                    max-height: 120px;
+                }
+            }
+
+            .services-text {
+                padding-bottom: 50px;
+                
+                h4 {
+                    margin-bottom: 0;
+                }
+            }
+
+            .btn-more {
+                position: absolute;
+                width: calc(100% - 30px);
+                bottom: 15px;
+
+                .lnk-more {
+                    font-weight: 700;
+                    color: $text-color;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0px 15px 20px #00000029;
+            }
+        }
+    }
+}
+
+.sec-industries {
+    .industries-container {
+        .col {
+            position: relative;
+
+            .industries-details {
+                position: absolute;
+                top: 0;
+                width: calc(100% - 24px);
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                transition: 0.5s;
+                opacity: 0;
+
+                a {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #fff;
+                }
+            }
+
+            &:hover {
+                .industries-details {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.sec-get-started {
+    h3 {
+        text-align: left;
+    }
+
+    h3, p {
+        color: $form-text-white-color;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $form-text-white-color;
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $form-text-white-color;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $form-text-white-color;
+    }
+    
+    input {
+        color: $form-text-white-color;
+        border-color: $form-text-white-color;
+    }
+    
+    .btn-submit {
+        background-color: $form-button-bg-dark-color;
+        border-color: $form-button-border-dark-color;
+    }
+}
+
+.sec-map {
+    padding: 0;
+}
+
+.sec-contact {
+    h3 {
+        text-align: left;
+    }
+}
+
+/* Footer */
+
+footer {
+    padding: 30px 0;
+    background-color: $terciary-color;
+
+    p {
+        line-height: 18px;
+        font-size: 14px;
+        color: $footer-link-color;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    span {
+        color: $footer-link-color;
+    }
+
+    a {
+        color: $footer-link-color;
+
+        &:hover {
+            color: $footer-link-color-hover;
+        }
+
+        &.lnk-bold {
+            font-weight: 700;
+        }
+    }
+
+    .menu-container {
+        margin-bottom: 30px;
+
+        ul {
+            margin-bottom: 18px;
+
+            li {
+                line-height: 18px;
+                font-size: 14px;
+                margin-bottom: 9px;
+    
+                span {
+                    font-weight: 700;
+                }
+        
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .wbe-seal-container {
+        .img-wbe-seal {
+            max-width: 150px;
+        }
+
+        &::after {
+            content: '';
+            /* width: calc(100% - 30px); */
+            width: 100%;
+            height: 1px;
+            margin: 12px 0;
+            /* margin-left: 15px; */
+            border-bottom: 1px solid $footer-divider-color;
+            display: block;
+        }
+    }
+
+    .links {
+        font-size: 0;
+
+        li {
+            margin-left: 24px;
+            font-size: 15px;
+            display: inline-block;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .social-links {
+        @extend .links;
+
+        text-align: right;
+
+        li {
+            font-size: 18px;
+        }
+    }
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (max-width: 1024px) {
+    .sec-industries {
+        .industries-container {
+            .col {
+                flex: 0 0 auto;
+                width: 33.3333333333%;
+                margin-bottom: 24px;
+
+                &:nth-child(4), &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+
+@media (max-width: 767px) {
+    section {
+        padding: 50px 0;
+    }
+
+    .sec-hero {
+        padding: 53px 0;
+    }
+
+    .sec-how-help {
+        div[class*="col-"] {
+            margin-bottom: 40px;
+            text-align: center;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .sec-clients {
+        div[class*="col-"] {
+            margin-bottom: 20px;
+
+            img {
+                max-width: 250px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .sec-services {
+        div[class*="col-"] {
+            margin-bottom: 20px;
+            text-align: center;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .sec-materials {
+        div[class*="col-"] {
+            margin-bottom: 20px;
+            text-align: center;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &.column-reverse {
+            .row {
+                flex-flow: column-reverse;
+
+                div[class*="col-"] {
+                    margin-bottom: 20px;
+        
+                    &:first-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .sec-get-started {
+        .col-primary {
+            margin-bottom: 20px;
+            text-align: center;
+
+            h3 {
+                text-align: center;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    footer {
+        .menu-container {
+            display: none;
+        }
+
+        [class*='col-sm'] {
+            margin-bottom: 10px;
+            text-align: center;
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    
+        .links, .social-links {
+            text-align: center;
+        }
+    }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+*/
+
+@media (max-width: 480px) {
+    .header-top {
+        [class*='col-sm'] {
+            margin-bottom: 10px;
+            text-align: center;
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .links, .social-links {
+            text-align: center;
+        }
+    }
+
+    .sec-hero {
+        h1 {
+            font-size: 36px;
+        }
+    }
+
+    .sec-industries {
+        .industries-container {
+            .col {
+                width: 100%;
+                margin-bottom: 12px;
+
+                &:nth-child(4) {
+                    margin-bottom: 12px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
